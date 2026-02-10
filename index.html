@@ -5,48 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pau & Mati | ¡Nos Casamos!</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        .font-fancy { font-family: 'Great Vibes', cursive; }
+        .font-fancy { font-family: 'Dancing Script', cursive; }
         .font-body { font-family: 'Montserrat', sans-serif; }
+        .fade-in { animation: fadeIn 2s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="bg-stone-50 font-body text-stone-800">
+<body class="bg-stone-50 font-body text-stone-800 leading-relaxed">
 
-    <section class="h-screen flex flex-col items-center justify-center text-center bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80')] bg-cover bg-center">
-        <div class="bg-white/70 p-12 backdrop-blur-md rounded-2xl shadow-2xl mx-4">
-            <h1 class="text-7xl md:text-9xl font-fancy mb-4 text-stone-700">Pau & Mati</h1>
-            <p class="text-xl tracking-[0.3em] uppercase font-light italic">¡Nuestra Boda!</p>
-            <div class="mt-8 text-2xl font-light border-y border-stone-400 py-4">
-                20 . SEPTIEMBRE . 2025
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80" class="w-full h-full object-cover scale-105" alt="Boda">
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white fade-in px-4">
+            <h1 class="text-7xl md:text-9xl font-fancy mb-4 drop-shadow-lg">Pau & Mati</h1>
+            <p class="text-xl tracking-[0.4em] uppercase font-light">Faltan solo:</p>
+            <div id="countdown" class="flex gap-4 justify-center mt-6 text-2xl font-semibold">
+                <div class="bg-white/20 backdrop-blur-md p-3 rounded-lg"><span id="days">00</span><p class="text-xs uppercase">Días</p></div>
+                <div class="bg-white/20 backdrop-blur-md p-3 rounded-lg"><span id="hours">00</span><p class="text-xs uppercase">Hrs</p></div>
+                <div class="bg-white/20 backdrop-blur-md p-3 rounded-lg"><span id="minutes">00</span><p class="text-xs uppercase">Min</p></div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-4 text-center max-w-5xl mx-auto">
-        <h2 class="text-5xl font-fancy mb-16 text-stone-600 italic">Los esperamos para celebrar</h2>
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="p-8 bg-white shadow-sm rounded-xl border border-stone-100">
-                <h3 class="text-2xl font-bold mb-4 uppercase tracking-widest text-stone-700">Ceremonia</h3>
-                <p class="text-lg">17:00 Hrs</p>
-                <p class="text-stone-500 mt-2 italic">Iglesia de Santa María</p>
-                <button class="mt-6 text-stone-400 hover:text-stone-800 transition text-sm">📍 VER UBICACIÓN</button>
+    <section class="py-20 px-6 max-w-4xl mx-auto text-center">
+        <h2 class="text-5xl font-fancy mb-12 text-stone-600">¿Cuándo y Dónde?</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+                <h3 class="text-xl font-semibold mb-4 uppercase tracking-widest">Ceremonia</h3>
+                <p>20 de Septiembre, 2025 - 17:00</p>
+                <p class="text-stone-500 mb-6">Iglesia Ejemplo, Ciudad</p>
+                <a href="https://maps.google.com/?q=TU_UBICACION" target="_blank" class="text-stone-400 border-b border-stone-400 pb-1 hover:text-stone-800 transition">📍 Ver en Google Maps</a>
             </div>
-            <div class="p-8 bg-white shadow-sm rounded-xl border border-stone-100">
-                <h3 class="text-2xl font-bold mb-4 uppercase tracking-widest text-stone-700">Fiesta</h3>
-                <p class="text-lg">19:30 Hrs</p>
-                <p class="text-stone-500 mt-2 italic">Hacienda Los Olivos</p>
-                <button class="mt-6 text-stone-400 hover:text-stone-800 transition text-sm">📍 VER UBICACIÓN</button>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+                <h3 class="text-xl font-semibold mb-4 uppercase tracking-widest">Celebración</h3>
+                <p>20 de Septiembre, 2025 - 19:30</p>
+                <p class="text-stone-500 mb-6">Salón de Eventos, Calle Falsa 123</p>
+                <a href="https://maps.google.com/?q=TU_UBICACION_FIESTA" target="_blank" class="text-stone-400 border-b border-stone-400 pb-1 hover:text-stone-800 transition">📍 Ver en Google Maps</a>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-stone-200 text-center">
-        <h2 class="text-5xl font-fancy mb-6 text-stone-700">¿Nos acompañas?</h2>
-        <p class="mb-10 text-stone-600 max-w-md mx-auto px-4">Queremos compartir este día contigo. Por favor, confirma tu asistencia antes del 1 de agosto.</p>
-        <a href="#" class="bg-stone-800 text-white px-12 py-4 rounded-full hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl uppercase tracking-widest text-sm font-bold">
-            Confirmar RSVP
+    <section class="bg-stone-100 py-20 px-4">
+        <h2 class="text-5xl font-fancy text-center mb-12">Nuestra Historia</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80" class="rounded-lg h-64 w-full object-cover hover:scale-105 transition duration-500 shadow-md">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80" class="rounded-lg h-64 w-full object-cover hover:scale-105 transition duration-500 shadow-md">
+            <img src="https://images.unsplash.com/photo-1465495910483-0d6745778503?auto=format&fit=crop&q=80" class="rounded-lg h-64 w-full object-cover hover:scale-105 transition duration-500 shadow-md">
+            <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80" class="rounded-lg h-64 w-full object-cover hover:scale-105 transition duration-500 shadow-md">
+        </div>
+    </section>
+
+    <section class="py-20 text-center px-4">
+        <h2 class="text-5xl font-fancy mb-8 text-stone-600 italic">Regalos</h2>
+        <p class="max-w-md mx-auto mb-8">Nuestra mayor alegría es tu presencia, pero si deseas hacernos un regalo, aquí tienes nuestros datos:</p>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 max-w-sm mx-auto">
+            <p class="font-bold">Banco Ejemplo</p>
+            <p class="text-stone-600 mt-2">CBU: 000000000000000000000</p>
+            <p class="text-stone-600">Alias: pau.y.mati.boda</p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-stone-800 text-white text-center px-4">
+        <h2 class="text-5xl font-fancy mb-6">Confirmación</h2>
+        <p class="mb-10 text-stone-300">Por favor, avísanos si vienes y si tienes alguna intolerancia alimentaria.</p>
+        <a href="LINK_A_TU_GOOGLE_FORM" target="_blank" class="inline-block bg-white text-stone-800 px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-stone-200 transition shadow-xl">
+            Confirmar Asistencia
         </a>
     </section>
 
-    <footer class="py-10 text-center text-stone-400 text
+    <script>
+        // SCRIPT CUENTA REGRESIVA
+        const targetDate = new Date("September 20, 2025 17:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        }, 1000);
+    </script>
+</body>
+</html>
