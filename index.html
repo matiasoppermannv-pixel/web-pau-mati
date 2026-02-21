@@ -3,90 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pau & Mati | ¡Nos Casamos!</title>
+    <title>Paula & Matías | Nuestra Boda</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <style>
-        .font-fancy { font-family: 'Dancing Script', cursive; }
-        .font-body { font-family: 'Montserrat', sans-serif; }
-        .fade-in { animation: fadeIn 2s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Montserrat', sans-serif; }
+        .bg-olive { background-color: #556b2f; } 
+        .text-olive { color: #556b2f; }
     </style>
 </head>
-<body class="bg-stone-50 font-body text-stone-800 leading-relaxed">
+<body class="bg-stone-100 font-sans text-stone-800">
 
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80" class="w-full h-full object-cover scale-105" alt="Boda">
-            <div class="absolute inset-0 bg-black/30"></div>
-        </div>
+    <section class="h-screen flex flex-col items-center justify-center text-center p-6 border-[16px] border-white m-4 shadow-inner bg-white">
+        <img src="https://cdn-icons-png.flaticon.com/512/2904/2904944.png" alt="flor" class="w-16 mb-8 opacity-40">
+        <h2 class="text-xl tracking-[0.5em] uppercase font-light mb-4">Save the Date</h2>
+        <h1 class="text-5xl md:text-7xl font-serif italic mb-6 text-stone-700">Paula & Matías</h1>
+        <div class="w-24 h-[1px] bg-stone-300 mb-6"></div>
+        <p class="text-lg tracking-widest uppercase italic">26 . Septiembre . 2026</p>
+        <p class="mt-2 font-serif text-stone-500">Estancia La Paz, Córdoba - Argentina</p>
         
-        <div class="relative z-10 text-center text-white fade-in px-4">
-            <h1 class="text-7xl md:text-9xl font-fancy mb-4 drop-shadow-lg">Pau & Mati</h1>
-            <p class="text-xl tracking-[0.4em] uppercase font-light">Faltan solo:</p>
-            <div id="countdown" class="flex gap-4 justify-center mt-6 text-2xl font-semibold">
-                <div class="bg-white/20 backdrop-blur-md p-3 rounded-lg"><span id="days">00</span><p class="text-xs uppercase">Días</p></div>
-                <div class="bg-white/20 backdrop-blur-md p-3 rounded-lg"><span id="hours">00</span><p class="text-xs uppercase">Hrs</p></div>
-                <div class="bg-white/20 backdrop-blur-md p-3 rounded-lg"><span id="minutes">00</span><p class="text-xs uppercase">Min</p></div>
+        <div id="timer" class="mt-12 flex gap-8 text-stone-400">
+            <div><span id="days" class="text-3xl block text-stone-700">00</span> días</div>
+            <div><span id="hours" class="text-3xl block text-stone-700">00</span> hs</div>
+            <div><span id="mins" class="text-3xl block text-stone-700">00</span> min</div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 bg-olive text-white text-center">
+        <h2 class="text-4xl font-serif italic mb-12">El Itinerario</h2>
+        <div class="flex flex-wrap justify-center gap-10 max-w-4xl mx-auto">
+            <div class="w-32 uppercase tracking-tighter">
+                <p class="text-2xl mb-2">💍</p>
+                <p class="text-xs opacity-70">17:00 hs</p>
+                <p class="text-sm font-bold">Ceremonia</p>
+            </div>
+            <div class="w-32 uppercase tracking-tighter">
+                <p class="text-2xl mb-2">🍸</p>
+                <p class="text-xs opacity-70">18:30 hs</p>
+                <p class="text-sm font-bold">Cocktail</p>
+            </div>
+            <div class="w-32 uppercase tracking-tighter">
+                <p class="text-2xl mb-2">🍽️</p>
+                <p class="text-xs opacity-70">20:30 hs</p>
+                <p class="text-sm font-bold">Cena</p>
+            </div>
+            <div class="w-32 uppercase tracking-tighter">
+                <p class="text-2xl mb-2">💃</p>
+                <p class="text-xs opacity-70">23:00 hs</p>
+                <p class="text-sm font-bold">Fiesta</p>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-6 max-w-4xl mx-auto text-center">
-        <h2 class="text-5xl font-fancy mb-12 text-stone-600">Acompañanos en nuestro dia</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
-                <h3 class="text-xl font-semibold mb-4 uppercase tracking-widest">Ceremonia</h3>
-                <p>26 de Septiembre, 2026 - 16:00</p>
-                <p class="text-stone-500 mb-6">Iglesia del Sagrado Corazón de Jesús, Ascochinga</p>
-                <a href="https://maps.app.goo.gl/QdL1gPi1gEiVpJ3z7" target="_blank" class="text-stone-400 border-b border-stone-400 pb-1 hover:text-stone-800 transition">📍 Ver en Google Maps</a>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
-                <h3 class="text-xl font-semibold mb-4 uppercase tracking-widest">Celebración</h3>
-                <p>26 de Septiembre, 2026 - 17:30</p>
-                <p class="text-stone-500 mb-6">Estancia La Paz, Ascochinga</p>
-                <a href="https://maps.app.goo.gl/cKV1e7ZF4sT8pWFPA" target="_blank" class="text-stone-400 border-b border-stone-400 pb-1 hover:text-stone-800 transition">📍 Ver en Google Maps</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-stone-100 py-20 px-4">
-        <h2 class="text-5xl font-fancy text-center mb-12">Nuestra Historia</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80" class="rounded-lg h-64 w-full object-cover hover:scale-105 transition duration-500 shadow-md">
-            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80" class="rounded-lg h-64 w-full object-cover hover:scale-105 transition duration-500 shadow-md">
-            <img src="https://images.unsplash.com/photo-1465495910483-0d6745778503?auto=format&fit=crop&q=80" class="rounded-lg h-64 w-full object-cover hover:scale-105 transition duration-500 shadow-md">
-            <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80" class="rounded-lg h-64 w-full object-cover hover:scale-105 transition duration-500 shadow-md">
-        </div>
-    </section>
-
-    <section class="py-20 text-center px-4">
-        <h2 class="text-5xl font-fancy mb-8 text-stone-600 italic">Regalos</h2>
-        <p class="max-w-md mx-auto mb-8">Nuestra mayor alegría es tu presencia, pero si deseas hacernos un regalo, aquí tienes nuestros datos:</p>
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 max-w-sm mx-auto">
-            <p class="font-bold">Banco Ejemplo</p>
-            <p class="text-stone-600 mt-2">CBU: 000000000000000000000</p>
-            <p class="text-stone-600">Alias: Boda Pau & Mati</p>
-        </div>
-    </section>
-
-    <section class="py-24 bg-stone-800 text-white text-center px-4">
-        <h2 class="text-5xl font-fancy mb-6">Confirmación</h2>
-        <p class="mb-10 text-stone-300">Por favor, avísanos si vienes y si tienes alguna intolerancia alimentaria.</p>
-        <a href="LINK_A_TU_GOOGLE_FORM" target="_blank" class="inline-block bg-white text-stone-800 px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-stone-200 transition shadow-xl">
-            Confirmar Asistencia
+    <section class="py-20 px-4 text-center max-w-2xl mx-auto">
+        <h2 class="text-4xl font-serif text-stone-700 mb-8">RSVP</h2>
+        <p class="italic mb-10">Nos encantaría que nos acompañes. Por favor, confirma tu asistencia aquí:</p>
+        <a href="TU_LINK_DE_GOOGLE_FORMS" class="inline-block bg-stone-800 text-white px-10 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-olive transition shadow-lg mb-16">
+            Confirmar ahora
         </a>
+
+        <div class="border-t border-stone-200 pt-16">
+            <h3 class="text-xl font-serif italic mb-4">Mesa de Regalos</h3>
+            <p class="text-sm text-stone-500 mb-6 px-6">Tu presencia es nuestro mejor regalo, pero si deseas colaborar con nuestra luna de miel:</p>
+            <div class="bg-stone-50 p-6 rounded border border-stone-200 inline-block">
+                <p class="font-bold">Alias: PAULA.MATI.BODA</p>
+                <p class="text-xs text-stone-400 mt-2 italic">Banco Galicia - Paula & Matías</p>
+            </div>
+        </div>
     </section>
 
     <script>
-        // SCRIPT CUENTA REGRESIVA
-        const targetDate = new Date("September 26, 2026 16:00:00").getTime();
+        const target = new Date("September 26, 2026 17:00:00").getTime();
         setInterval(() => {
             const now = new Date().getTime();
-            const distance = targetDate - now;
-            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const diff = target - now;
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         }, 1000);
     </script>
 </body>
