@@ -13,7 +13,7 @@
         .text-olive { color: #000000; }
     </style>
 </head>
-<<body style="background-color: #f4f1ee; background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); color: #000000;" class="font-sans">>
+<<<body style="background-color: #ffffff; background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); color: #000000;" class="font-sans">>>
 
     <section class="h-screen flex flex-col items-center justify-center text-center p-6 border-[16px] border-white m-4 shadow-inner bg-white">
         <img src="https://cdn-icons-png.flaticon.com/512/2904/2904944.png" alt="flor" class="w-16 mb-8 opacity-40">
