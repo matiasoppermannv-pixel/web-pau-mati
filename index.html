@@ -3,115 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula & Matías</title>
+    <title>Boda Pau & Mati</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cinzel:wght@400;700&family=Birthstone&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --color-principal: #4a2c2a; /* Marrón editorial */
-            --color-fondo: #dfcfc4;      /* Crema suave */
-        }
-        body { 
-            background-color: var(--color-fondo); 
-            color: var(--color-principal); 
-            font-family: 'Cormorant Garamond', serif; 
-            overflow-x: hidden;
-        }
-        .font-editorial { font-family: 'Cinzel', serif; letter-spacing: 0.5em; }
-        .font-script { font-family: 'Birthstone', cursive; }
-        
-        /* Efecto de línea fina decorativa */
-        .line-deco {
-            width: 1px;
-            height: 80px;
-            background-color: var(--color-principal);
-            opacity: 0.3;
-            margin: 2rem auto;
-        }
-
-        .btn-rsvp {
-            border: 1px solid var(--color-principal);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .btn-rsvp:hover {
-            background-color: var(--color-principal);
-            color: white;
-            letter-spacing: 0.3em;
+        body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; color: #333; }
+        .serif { font-family: 'Playfair Display', serif; }
+        /* Efecto de textura de papel */
+        .bg-paper { 
+            background-color: #fdfcf9; 
+            background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png'); 
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-paper">
 
-    <section class="h-screen flex flex-col items-center justify-center text-center p-6">
-        <p class="font-editorial text-[10px] uppercase mb-12 opacity-60">Estancia La Paz</p>
-        
-        <div class="space-y-2">
-            <h1 class="font-editorial text-5xl md:text-8xl tracking-widest">PAULA</h1>
-            <p class="font-script text-5xl md:text-6xl my-4 opacity-70">and</p>
-            <h1 class="font-editorial text-5xl md:text-8xl tracking-widest">MATÍAS</h1>
-        </div>
-
-        <div class="line-deco"></div>
-        
-        <p class="font-editorial text-xs tracking-[0.4em] mb-2 uppercase">26 de Septiembre</p>
-        <p class="font-script text-3xl opacity-80">Dos mil veintiseis</p>
+    <section class="h-screen flex flex-col justify-center items-center text-center p-6">
+        <h2 class="uppercase tracking-[0.3em] text-sm mb-8">¡Nos Casamos!</h2>
+        <h1 class="serif text-6xl md:text-8xl mb-8">Pau & Mati</h1>
+        <p class="italic serif text-xl mb-12">25 de Octubre, 2025 • La Paz, Bolivia</p>
+        <div class="w-[1px] h-20 bg-black"></div>
     </section>
 
-    <section class="py-32 px-8 bg-white/30 text-center">
-        <div class="max-w-xl mx-auto">
-            <h3 class="font-editorial text-[9px] uppercase tracking-[0.6em] mb-12 opacity-50">A nuestros seres queridos</h3>
-            <p class="text-2xl md:text-3xl font-light italic leading-relaxed">
-                "Hay momentos que merecen ser compartidos con las personas que han sido parte de nuestra historia."
-            </p>
-            <p class="font-script text-4xl mt-12 opacity-60">Los esperamos.</p>
-        </div>
-    </section>
-
-    <section class="py-32 px-6 text-center">
-        <h2 class="font-editorial text-xs tracking-[0.8em] uppercase mb-20 opacity-60">The Day</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-20 max-w-5xl mx-auto">
-            <div class="flex flex-col items-center group">
-                <span class="text-2xl mb-6 opacity-40 group-hover:opacity-100 transition-opacity">💍</span>
-                <p class="font-editorial text-[9px] tracking-widest uppercase mb-2 opacity-50 text-stone-500">17:00 hs</p>
-                <p class="text-xl italic">Ceremonia</p>
+    <section class="py-20 px-6 text-center max-w-2xl mx-auto">
+        <h2 class="serif text-3xl mb-10 italic">Nuestra Celebración</h2>
+        <div class="grid md:grid-cols-2 gap-12 text-sm tracking-widest uppercase">
+            <div>
+                <h3 class="font-bold mb-4">Ceremonia</h3>
+                <p>Iglesia San Francisco<br>16:00 Horas</p>
             </div>
-            <div class="flex flex-col items-center group">
-                <span class="text-2xl mb-6 opacity-40 group-hover:opacity-100 transition-opacity">🍸</span>
-                <p class="font-editorial text-[9px] tracking-widest uppercase mb-2 opacity-50">18:30 hs</p>
-                <p class="text-xl italic">Cocktail</p>
-            </div>
-            <div class="flex flex-col items-center group">
-                <span class="text-2xl mb-6 opacity-40 group-hover:opacity-100 transition-opacity">🍽️</span>
-                <p class="font-editorial text-[9px] tracking-widest uppercase mb-2 opacity-50">21:00 hs</p>
-                <p class="text-xl italic">Cena</p>
-            </div>
-            <div class="flex flex-col items-center group">
-                <span class="text-2xl mb-6 opacity-40 group-hover:opacity-100 transition-opacity">💃</span>
-                <p class="font-editorial text-[9px] tracking-widest uppercase mb-2 opacity-50">23:00 hs</p>
-                <p class="text-xl italic">Fiesta</p>
+            <div>
+                <h3 class="font-bold mb-4">Recepción</h3>
+                <p>Salón de Eventos<br>19:00 Horas</p>
             </div>
         </div>
     </section>
 
-    <section class="py-40 bg-[#4a2c2a] text-[#dfcfc4] text-center px-6">
-        <h2 class="font-editorial text-xs tracking-[0.8em] uppercase mb-12">Confirmación</h2>
-        <p class="text-sm font-light tracking-[0.2em] mb-16 opacity-70">POR FAVOR, CONFIRMAR ANTES DEL 15 DE AGOSTO</p>
-        <a href="TU_LINK_DE_GOOGLE_FORMS" class="btn-rsvp inline-block px-16 py-5 text-[9px] tracking-[0.5em] uppercase text-[#dfcfc4] border-[#dfcfc4]/30">
-            Confirmar Asistencia
-        </a>
-    </section>
-
-    <footer class="py-32 text-center px-6">
-        <div class="max-w-xs mx-auto">
-            <h3 class="font-editorial text-[9px] uppercase tracking-[0.4em] mb-8 opacity-40">Mesa de Regalos</h3>
-            <p class="italic text-lg mb-10">Tu compañía es lo más importante para nosotros.</p>
-            <div class="space-y-4">
-                <p class="text-[10px] tracking-widest uppercase opacity-50">Alias</p>
-                <p class="text-2xl font-light border-b border-[#4a2c2a]/10 pb-4">PAULA.MATI.BODA</p>
-                <p class="text-[9px] tracking-widest uppercase opacity-50 italic">Banco Galicia</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+    <section id="confirmacion" class="py-20 bg-white/50 border-t border-b border-stone-200">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="serif text-3xl mb-4 italic">Confirmar Asistencia
