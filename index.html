@@ -8,44 +8,55 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://tally.so/widgets/embed.js"></script>
     <style>
-      .font-hand { font-family: 'Gochi Hand', cursive; }  
-        body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; color: #333; }
-        .serif { font-family: 'Playfair Display', serif; }
-        .bg-paper { 
-            background-color: #fdfcf9; 
-            background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png'); 
-        }
-    </style>
+    body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; }
+    .font-hand { font-family: 'Gochi Hand', cursive; }
+    
+    /* Textura de papel para secciones inferiores */
+    .bg-paper { 
+        background-color: #fdfcf9; 
+        background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png'); 
+    }
+
+    /* Estilo para los slides de la portada */
+    .slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(100%) brightness(0.5); /* BN y oscurecido para que se lea el texto blanco */
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+    }
+    .slide.active { opacity: 1; }
+</style>
 </head>
 <body class="bg-paper">
 
-<section class="relative h-screen flex flex-col justify-center items-center text-center p-6 overflow-hidden">
-    
-    <div class="absolute inset-0 z-0">
-        <div class="slide active absolute inset-0 bg-cover bg-center transition-opacity duration-[2000ms]" 
-             style="background-image: url('TU_FOTO_1.jpg'); filter: grayscale(100%) brightness(0.6);"></div>
-        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-[2000ms]" 
-             style="background-image: url('TU_FOTO_2.jpg'); filter: grayscale(100%) brightness(0.6);"></div>
+<section class="relative h-screen w-full flex flex-col justify-center items-center text-center p-6 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-black">
+        <div class="slide active" style="background-image: url('TU_FOTO_1.jpg')"></div>
+        <div class="slide" style="background-image: url('TU_FOTO_2.jpg')"></div>
+        <div class="slide" style="background-image: url('TU_FOTO_3.jpg')"></div>
     </div>
 
-    <div class="relative z-10">
-        <h2 class="font-sans uppercase tracking-[0.6em] text-xl mb-12 text-black font-bold">¡Nos Casamos!</h2>
+    <div class="relative z-10 text-white">
+        <h2 class="uppercase tracking-[0.5em] text-xs mb-8 opacity-90">¡Nos Casamos!</h2>
         
-        <h1 class="font-elegant text-8xl md:text-[12rem] mb-16 text-black leading-none drop-shadow-sm">
+        <h1 class="font-hand text-7xl md:text-9xl mb-12 drop-shadow-lg">
             Pau & Mati
         </h1>
 
-        <div id="countdown" class="flex gap-8 md:gap-16 mt-20 mb-20 text-black">
-            <div class="flex flex-col"><span id="days" class="text-4xl font-light">00</span><span class="text-[10px] uppercase tracking-widest opacity-60">Días</span></div>
-            <div class="flex flex-col"><span id="hours" class="text-4xl font-light">00</span><span class="text-[10px] uppercase tracking-widest opacity-60">Hrs</span></div>
-            <div class="flex flex-col"><span id="minutes" class="text-4xl font-light">00</span><span class="text-[10px] uppercase tracking-widest opacity-60">Min</span></div>
-            <div class="flex flex-col"><span id="seconds" class="text-4xl font-light opacity-40">00</span><span class="text-[10px] uppercase tracking-widest opacity-60">Seg</span></div>
+        <div id="countdown" class="flex gap-6 md:gap-12 mb-16 justify-center">
+            <div class="flex flex-col"><span id="days" class="text-3xl font-light">00</span><span class="text-[9px] uppercase tracking-widest opacity-70">Días</span></div>
+            <div class="flex flex-col"><span id="hours" class="text-3xl font-light">00</span><span class="text-[9px] uppercase tracking-widest opacity-70">Hrs</span></div>
+            <div class="flex flex-col"><span id="minutes" class="text-3xl font-light">00</span><span class="text-[9px] uppercase tracking-widest opacity-70">Min</span></div>
+            <div class="flex flex-col"><span id="seconds" class="text-3xl font-light opacity-50">00</span><span class="text-[9px] uppercase tracking-widest opacity-70">Seg</span></div>
         </div>
 
-        <div class="w-[1px] h-20 bg-black/30 mx-auto"></div>
+        <div class="w-[1px] h-16 bg-white/30 mx-auto"></div>
     </div>
 </section>
-<section class="py-24 px-6 text-center bg-white">
+<section class="py-24 px-6 text-center bg-paper border-b border-stone-200">
     <div class="max-w-2xl mx-auto">
         <p class="font-sans tracking-widest uppercase text-xs mb-2 opacity-70">Te esperamos el día</p>
         <p class="font-serif text-2xl mb-2 text-stone-700">26 de Septiembre, 2026</p>
@@ -154,6 +165,18 @@
         setTimeout(showSlides, 5000); // Cambia cada 5 segundos
     }
     showSlides();
+</script>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(nextSlide, 3000);
 </script>
 </body>
 </html>
