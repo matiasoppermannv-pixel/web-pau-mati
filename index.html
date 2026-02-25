@@ -58,7 +58,7 @@
             Ver Indicaciones
         </button>
     </div>
-</section>
+
 
 <div id="locationModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" style="background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px);">
     <div class="bg-[#fdfcf9] p-8 rounded-lg shadow-2xl max-w-sm w-full text-center border border-stone-200">
@@ -86,7 +86,7 @@
        + Agregar al calendario
     </a>
 </div> 
-</section>
+
     <section class="py-24 text-center bg-white/30 border-t border-b border-stone-200">
         <h2 class="serif text-3xl mb-4 italic">Asistencia</h2>
         <p class="text-[10px] tracking-[0.2em] uppercase mb-12 text-stone-500">Por favor, confirma tu presencia antes del 15 de agosto</p>
@@ -113,10 +113,11 @@
         modal.classList.toggle('hidden');
     }
 </script>
+    
 <script>
     // Configura tu fecha aquí (Año, Mes-1, Día, Hora, Minuto)
     // Nota: El mes 9 es Octubre porque empieza en 0
-    const weddingDate = new Date(2026, 9, 26, 16, 0, 0).getTime();
+    const weddingDate = new Date(2026, 8, 26, 16, 0, 0).getTime();
 
     const timer = setInterval(function() {
         const now = new Date().getTime();
