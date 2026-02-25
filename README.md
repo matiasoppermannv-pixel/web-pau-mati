@@ -59,7 +59,7 @@
     <section class="py-20 px-4 text-center max-w-2xl mx-auto">
         <h2 class="text-4xl font-serif text-stone-700 mb-8">RSVP</h2>
         <p class="italic mb-10">Nos encantaría que nos acompañes. Por favor, confirma tu asistencia aquí:</p>
-        <a href="(https://tally.so/r/0QEdJB)" class="inline-block bg-stone-800 text-white px-10 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-olive transition shadow-lg mb-16">
+        <a href="[(https://tally.so/r/0QEdJB)]" class="inline-block bg-stone-800 text-white px-10 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-olive transition shadow-lg mb-16">
             Confirmar ahora
         </a>
 
