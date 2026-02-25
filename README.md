@@ -3,84 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula & Matías | Nuestra Boda</title>
+    <title>Boda Pau & Mati</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <style>
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .font-sans { font-family: 'Montserrat', sans-serif; }
-        .bg-olive { background-color: #556b2f; } 
-        .text-olive { color: #000000; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; color: #333; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .bg-paper { background-color: #fdfcf9; background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png'); }
     </style>
 </head>
-<<<body style="background-color: #ffffff; background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); color: #000000;" class="font-sans">>>
+<body class="bg-paper">
 
-    <section class="h-screen flex flex-col items-center justify-center text-center p-6 border-[16px] border-white m-4 shadow-inner bg-white">
-        <img src="https://cdn-icons-png.flaticon.com/512/2904/2904944.png" alt="flor" class="w-16 mb-8 opacity-40">
-        <h2 class="text-xl tracking-[0.5em] uppercase font-light mb-4">Save the Date</h2>
-        <h1 class="text-5xl md:text-7xl font-serif italic mb-6 text-stone-700">Paula & Matías</h1>
-        <div class="w-24 h-[1px] bg-stone-300 mb-6"></div>
-        <p class="text-lg tracking-widest uppercase italic">26 . Septiembre . 2026</p>
-        <p class="mt-2 font-serif text-stone-500">Estancia La Paz, Córdoba - Argentina</p>
-        
-        <div id="timer" class="mt-12 flex gap-8 text-stone-400">
-            <div><span id="days" class="text-3xl block text-stone-700">00</span> días</div>
-            <div><span id="hours" class="text-3xl block text-stone-700">00</span> hs</div>
-            <div><span id="mins" class="text-3xl block text-stone-700">00</span> min</div>
-        </div>
+    <section class="h-screen flex flex-col justify-center items-center text-center p-6">
+        <h2 class="uppercase tracking-[0.3em] text-sm mb-8">¡Nos Casamos!</h2>
+        <h1 class="serif text-6xl md:text-8xl mb-8">Pau & Mati</h1>
+        <p class="italic serif text-xl mb-12">25 de Octubre, 2025 • La Paz, Bolivia</p>
+        <div class="w-[1px] h-20 bg-black"></div>
     </section>
 
-    <section class="py-20 px-4 bg-olive text-white text-center">
-        <h2 class="text-4xl font-serif italic mb-12">El Itinerario</h2>
-        <div class="flex flex-wrap justify-center gap-10 max-w-4xl mx-auto">
-            <div class="w-32 uppercase tracking-tighter">
-                <p class="text-2xl mb-2">💍</p>
-                <p class="text-xs opacity-70">17:00 hs</p>
-                <p class="text-sm font-bold">Ceremonia</p>
+    <section class="py-20 px-6 text-center max-w-2xl mx-auto">
+        <h2 class="serif text-3xl mb-10 italic">Nuestra Celebración</h2>
+        <div class="grid md:grid-cols-2 gap-12 text-sm tracking-widest uppercase">
+            <div>
+                <h3 class="font-bold mb-4">Ceremonia</h3>
+                <p>Iglesia San Francisco<br>16:00 Horas</p>
             </div>
-            <div class="w-32 uppercase tracking-tighter">
-                <p class="text-2xl mb-2">🍸</p>
-                <p class="text-xs opacity-70">18:30 hs</p>
-                <p class="text-sm font-bold">Cocktail</p>
-            </div>
-            <div class="w-32 uppercase tracking-tighter">
-                <p class="text-2xl mb-2">🍽️</p>
-                <p class="text-xs opacity-70">20:30 hs</p>
-                <p class="text-sm font-bold">Cena</p>
-            </div>
-            <div class="w-32 uppercase tracking-tighter">
-                <p class="text-2xl mb-2">💃</p>
-                <p class="text-xs opacity-70">23:00 hs</p>
-                <p class="text-sm font-bold">Fiesta</p>
+            <div>
+                <h3 class="font-bold mb-4">Recepción</h3>
+                <p>Salón de Eventos<br>19:00 Horas</p>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-4 text-center max-w-2xl mx-auto">
-        <h2 class="text-4xl font-serif text-stone-700 mb-8">RSVP</h2>
-        <p class="italic mb-10">Nos encantaría que nos acompañes. Por favor, confirma tu asistencia aquí:</p>
-<iframe data-tally-src="https://tally.so/embed/0QEdJB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="575" frameborder="0" marginheight="0" marginwidth="0" title="Boda Pau & Mati"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-
-        <div class="border-t border-stone-200 pt-16">
-            <h3 class="text-xl font-serif italic mb-4">Mesa de Regalos</h3>
-            <p class="text-sm text-stone-500 mb-6 px-6">Tu presencia es nuestro mejor regalo, pero si deseas colaborar con nuestra luna de miel:</p>
-            <div class="bg-stone-50 p-6 rounded border border-stone-200 inline-block">
-                <p class="font-bold">Alias: PAULA.MATI.BODA</p>
-                <p class="text-xs text-stone-400 mt-2 italic">Banco Galicia - Paula & Matías</p>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        const target = new Date("September 26, 2026 17:00:00").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = target - now;
-            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        }, 1000);
-    </script>
-</body>
-</html>
+    <section id="rsvp" class="py-20 bg-white/50 border-t border-b border-stone-200">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="serif text-3xl text-center mb-4 italic">Confirmar Asistencia</h2>
+            <p class="text-center text-xs tracking-[0.2em] uppercase mb-10">Por favor, confirma antes del 30 de Septiembre</p>
+            
+            <iframe 
+                data-tally-src="https://tally.so/embed/0QEdJB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                loading="lazy" 
+                width="100%" 
+                height="500" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                title="Boda Pau & Mati">
+            </iframe>
+            <script>
+                var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=
