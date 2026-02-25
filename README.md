@@ -59,10 +59,8 @@
     <section class="py-20 px-4 text-center max-w-2xl mx-auto">
         <h2 class="text-4xl font-serif text-stone-700 mb-8">RSVP</h2>
         <p class="italic mb-10">Nos encantaría que nos acompañes. Por favor, confirma tu asistencia aquí:</p>
-     <a href="https://tally.so/r/0QEdJB" class="inline-block bg-stone-800 text-white px-10 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-olive transition shadow-lg mb-16">
-" class="inline-block bg-stone-800 text-white px-10 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-olive transition shadow-lg mb-16">
-            Confirmar ahora
-        </a>
+<iframe data-tally-src="https://tally.so/embed/0QEdJB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="575" frameborder="0" marginheight="0" marginwidth="0" title="Boda Pau & Mati"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 
         <div class="border-t border-stone-200 pt-16">
             <h3 class="text-xl font-serif italic mb-4">Mesa de Regalos</h3>
