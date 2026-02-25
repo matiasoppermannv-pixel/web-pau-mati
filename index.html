@@ -6,6 +6,7 @@
     <title>Boda Pau & Mati</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://tally.so/widgets/embed.js"></script>
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; color: #333; }
         .serif { font-family: 'Playfair Display', serif; }
@@ -24,44 +25,24 @@
         <div class="w-[1px] h-20 bg-black"></div>
     </section>
 
-    <section class="py-20 px-6 text-center max-w-2xl mx-auto">
-        <h2 class="serif text-3xl mb-10 italic">Nuestra Celebración</h2>
-        <div class="grid md:grid-cols-2 gap-12 text-sm tracking-widest uppercase text-stone-600">
-            <div>
-                <h3 class="font-bold mb-4">Ceremonia</h3>
-                <p>Iglesia San Francisco<br>16:00 Horas</p>
-            </div>
-            <div>
-                <h3 class="font-bold mb-4">Recepción</h3>
-                <p>Salón de Eventos<br>19:00 Horas</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="rsvp" class="py-20 bg-white/40 border-t border-b border-stone-200">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="serif text-3xl text-center mb-4 italic text-stone-800">Confirmar Asistencia</h2>
-            <p class="text-center text-[10px] tracking-[0.2em] uppercase mb-12 text-stone-500">Por favor, completa el formulario a continuación</p>
-            
-            <iframe 
-                data-tally-src="https://tally.so/embed/0QEdJB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-                loading="lazy" 
-                width="100%" 
-                height="500" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0" 
-                title="Boda Pau & Mati">
-            </iframe>
-            <script>
-                var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}
-            </script>
-        </div>
+    <section class="py-24 text-center bg-white/30 border-t border-b border-stone-200">
+        <h2 class="serif text-3xl mb-4 italic">Asistencia</h2>
+        <p class="text-[10px] tracking-[0.2em] uppercase mb-12 text-stone-500">Por favor, confirma tu presencia antes del 15 de agosto</p>
+        
+        <button 
+            data-tally-open="0QEdJB" 
+            data-tally-layout="modal" 
+            data-tally-width="500" 
+            data-tally-emoji-text="👋" 
+            data-tally-emoji-animation="wave"
+            class="inline-block bg-stone-800 text-white px-12 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-stone-700 transition shadow-xl active:scale-95">
+            Confirmar Asistencia
+        </button>
     </section>
 
     <footer class="py-24 text-center">
-        <p class="serif italic text-2xl text-stone-700">¡Te esperamos con mucha emoción!</p>
-        <p class="mt-10 text-[9px] tracking-[0.3em] uppercase opacity-40 text-stone-900">P & M • 2025</p>
+        <p class="serif italic text-2xl opacity-80">¡Te esperamos!</p>
+        <p class="mt-10 text-[9px] tracking-[0.3em] uppercase opacity-40">P & M • 2025</p>
     </footer>
 
 </body>
