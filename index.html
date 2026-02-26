@@ -32,6 +32,16 @@
 .portada-contenido {
     position: relative;
     z-index: 10;}
+/* Esto evita que las imágenes "pesadas" rompan el layout en móviles */
+img {
+    max-width: 100%;
+    height: auto;}
+
+/* Fuerza la eliminación de la línea vertical del contador */
+.flex.flex-col {
+    border: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;}
 </style>
 </head>
 <body class="bg-paper">
