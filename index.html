@@ -37,22 +37,37 @@ img {
     max-width: 100%;
     height: auto;}
 
-/* Fuerza la eliminación de la línea vertical del contador */
+/* ELIMINAR LÍNEA VERTICAL DEFINITIVAMENTE */
 .flex.flex-col {
-    border: none !important;
-    padding-left: 0 !important;
-    margin-left: 0 !important;}
+    border: none !important;      /* Quita cualquier borde */
+    border-left: none !important; /* Específicamente el izquierdo */
+    padding-left: 0 !important;   /* Quita espacios que puedan simular una línea */
+    margin-left: 0 !important;
+}
+/* NÚMEROS MÁS GRANDES */
+#days, #hours, #minutes, #seconds {
+    font-size: 3.5rem !important; /* Tamaño grande para móvil */
+    font-weight: 300;
+    line-height: 1;
+    display: block;
+}
+/* Tamaño extra grande para computadoras */
+@media (min-width: 768px) {
+    #days, #hours, #minutes, #seconds {
+        font-size: 6rem !important;
+    }
+
 </style>
 </head>
 <body class="bg-paper">
 
 <section class="relative h-screen w-full flex flex-col justify-center items-center text-center p-6 overflow-hidden">
-    <div class="absolute inset-0 z-0 bg-black">
-        <div class="slide active" style="background-image: url('Boda1.jpg')"></div>
-        <div class="slide" style="background-image: url('Boda3.jpg')"></div>
-        <div class="slide" style="background-image: url('Boda6.jpg')"></div>
-        <div class="slide" style="background-image: url('Boda9.jpg')"></div>
-    </div>
+   <div class="absolute inset-0 z-0 bg-black">
+    <div class="slide active" style="background-image: url('Boda1.jpg')"></div>
+    <div class="slide" style="background-image: url('Boda3.jpg')"></div>
+    <div class="slide" style="background-image: url('Boda6.jpg')"></div>
+    <div class="slide" style="background-image: url('Boda9.jpg')"></div>
+</div>
 
     <div class="relative z-10 text-white">
         <h2 class="uppercase tracking-[0.5em] text-xs mb-10 opacity-90">¡Nos Casamos!</h2>
