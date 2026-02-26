@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@200;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://tally.so/widgets/embed.js"></script>
-    <style>
+<style>
     body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; }
     .font-hand { font-family: 'Gochi Hand', cursive; }
     
@@ -25,7 +25,8 @@
         background-position: center;
         filter: grayscale(100%) brightness(0.5); /* BN y oscurecido para que se lea el texto blanco */
         opacity: 0;
-        transition: opacity 2s ease-in-out;}
+        transition: opacity 3s ease-in-out;
+        z-index: 0;}
     .slide.active { opacity: 1; }
     /* El contenido (texto) debe estar por encima */
 .portada-contenido {
