@@ -25,18 +25,28 @@
         background-position: center;
         filter: grayscale(100%) brightness(0.5); /* BN y oscurecido para que se lea el texto blanco */
         opacity: 0;
-        transition: opacity 2s ease-in-out;
-    }
+        transition: opacity 2s ease-in-out;}
     .slide.active { opacity: 1; }
+    /* El contenido (texto) debe estar por encima */
+.portada-contenido {
+    position: relative;
+    z-index: 10;}
 </style>
 </head>
 <body class="bg-paper">
 
 <section class="relative h-screen w-full flex flex-col justify-center items-center text-center p-6 overflow-hidden">
     <div class="absolute inset-0 z-0 bg-black">
-        <div class="slide active" style="background-image: url('TU_FOTO_1.jpg')"></div>
-        <div class="slide" style="background-image: url('TU_FOTO_2.jpg')"></div>
-        <div class="slide" style="background-image: url('TU_FOTO_3.jpg')"></div>
+        <div class="slide active" style="background-image: url('Boda1.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda2.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda3.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda4.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda5.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda6.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda7.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda8.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda9.jpg')"></div>
+        <div class="slide" style="background-image: url('Boda10.jpg')"></div>
     </div>
 
     <div class="relative z-10 text-white">
@@ -191,17 +201,22 @@
     }, 1000);
 </script>
 <script>
-    let slideIndex = 0;
+    let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
-    function showSlides() {
-        slides.forEach(s => s.style.opacity = "0");
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.opacity = "1";
-        setTimeout(showSlides, 5000); // Cambia cada 5 segundos
+    function nextSlide() {
+        // Quita la clase activa de la foto actual
+        slides[currentSlide].classList.remove('active');
+        
+        // Pasa a la siguiente (y vuelve a empezar si es la última)
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Añade la clase activa a la nueva foto
+        slides[currentSlide].classList.add('active');
     }
-    showSlides();
+
+    // Cambia la foto cada 5 segundos (5000 milisegundos)
+    setInterval(nextSlide, 5000);
 </script>
 <script>
     let currentSlide = 0;
