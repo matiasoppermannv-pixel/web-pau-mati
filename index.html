@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda Pau & Mati</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@100;200;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@100;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://tally.so/widgets/embed.js"></script>
 <style>
-    /* 1. CONFIGURACIÓN GLOBAL */
+    /* CONFIGURACIÓN GLOBAL */
     body { 
         font-family: 'Montserrat', sans-serif; 
+        font-weight: 100; /* Peso por defecto ultra-delgado */
         background-color: #fdfcf9; 
         background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
         color: #000; 
@@ -21,7 +22,7 @@
     .font-hand { font-family: 'Gochi Hand', cursive; }
     h1, h2, h3, p, span { color: #000 !important; }
 
-    /* 2. EFECTO FOTO FULL WIDTH CON DESVANECIDO */
+    /* EFECTO FOTO FULL WIDTH CON DESVANECIDO */
     .contenedor-foto-full {
         width: 100vw;
         position: relative;
@@ -39,20 +40,21 @@
         mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
     }
 
-    /* 3. ESTILOS CRONOGRAMA SIN LÍNEA */
+    /* ESTILOS CRONOGRAMA */
     .custom-scrollbar::-webkit-scrollbar { height: 3px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
 
+    /* Forzamos peso ultra-delgado para números */
     #days, #hours, #minutes, #seconds { font-weight: 100 !important; line-height: 1; }
 </style>
 </head>
 <body>
 
-    <section class="h-screen w-full flex flex-col items-center justify-center text-center px-6">
-        <h2 class="uppercase tracking-[0.7em] text-[10px] mb-8 opacity-60 font-light">¡Nos Casamos!</h2>
+    <section class="h-screen w-full flex flex-col items-center justify-center text-center px-6 relative z-10">
+        <h2 class="uppercase tracking-[0.8em] text-[12px] mb-8 opacity-80 font-normal">¡Nos Casamos!</h2>
         <h1 class="font-hand text-6xl md:text-[11rem] mb-12 leading-tight">Pau & Mati</h1>
-        <p class="uppercase tracking-[0.5em] text-[8px] mb-8 opacity-40 font-light">Y faltan solo</p>
+        <p class="uppercase tracking-[0.6em] text-[10px] mb-8 opacity-60 font-normal">Y faltan solo</p>
         
         <div id="countdown" class="flex gap-4 md:gap-14 mb-16">
             <div class="flex flex-col items-center"><span id="days" class="text-3xl md:text-6xl">00</span><span class="text-[8px] uppercase tracking-widest opacity-40 mt-2">Días</span></div>
@@ -83,8 +85,8 @@
 
     <section class="py-24 text-center">
         <div class="max-w-2xl mx-auto px-6">
-            <h2 class="font-serif text-3xl mb-10 italic">¡Queremos que nos acompañes!</h2>
-            <button data-tally-open="0QEdJB" class="bg-black text-white px-12 py-4 rounded-full tracking-widest uppercase text-[11px] hover:bg-zinc-800 transition shadow-xl mb-8">
+            <h2 class="font-hand text-5xl mb-10 text-black">¡Queremos que nos acompañes!</h2>
+            <button data-tally-open="0QEdJB" class="bg-black text-white px-12 py-4 rounded-full tracking-widest uppercase text-[11px] hover:bg-zinc-800 transition shadow-xl mb-8 active:scale-95">
                 Confirma tu asistencia
             </button>
             <p class="text-[10px] tracking-[0.2em] uppercase opacity-40">Por favor, confirma antes del 15 de agosto</p>
@@ -93,29 +95,29 @@
 
     <section class="py-24 bg-paper overflow-hidden border-t border-black/5">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <h3 class="uppercase tracking-[0.3em] text-[10px] mb-20 opacity-40">Itinerario</h3>
+            <h3 class="font-hand text-6xl mb-20 text-black">Cronograma</h3>
             
             <div class="overflow-x-auto pb-12 custom-scrollbar">
                 <div class="min-w-[850px] relative px-10">
                     <div class="flex justify-between items-start relative z-10">
                         <div class="flex flex-col items-center w-48">
                             <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">16:00 HS</span>
-                            <div class="mb-6"><img src="church.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
+                            <div class="mb-6"><img src="church.png" alt="Ceremonia" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
                             <p class="font-hand text-3xl">Ceremonia</p>
                         </div>
                         <div class="flex flex-col items-center w-48">
                             <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">17:30 HS</span>
-                            <div class="mb-6"><img src="cocktail.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
+                            <div class="mb-6"><img src="cocktail.png" alt="Recepción" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
                             <p class="font-hand text-3xl">Recepción</p>
                         </div>
                         <div class="flex flex-col items-center w-48">
                             <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">20:00 HS</span>
-                            <div class="mb-6"><img src="eat.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
+                            <div class="mb-6"><img src="eat.png" alt="Cena" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
                             <p class="font-hand text-3xl">Cena</p>
                         </div>
                         <div class="flex flex-col items-center w-48">
                             <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">22:00 HS</span>
-                            <div class="mb-6"><img src="disco-ball.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
+                            <div class="mb-6"><img src="disco-ball.png" alt="Baile" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
                             <p class="font-hand text-3xl">Baile</p>
                         </div>
                     </div>
@@ -134,7 +136,7 @@
             <h3 class="font-serif italic text-2xl mb-8">Ubicaciones</h3>
             <a href="#" target="_blank" class="block w-full py-4 mb-4 border border-black/10 rounded-md text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Ceremonia</a>
             <a href="#" target="_blank" class="block w-full py-4 mb-8 border border-black/10 rounded-md text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Recepción</a>
-            <button onclick="toggleModal()" class="text-[9px] uppercase tracking-[0.3em] underline opacity-40">Cerrar</button>
+            <button onclick="toggleModal()" class="text-[9px] uppercase tracking-[0.3em] underline opacity-40 hover:opacity-100 transition-opacity">Cerrar</button>
         </div>
     </div>
 
