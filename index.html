@@ -4,247 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda Pau & Mati</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@200;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@100;200;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://tally.so/widgets/embed.js"></script>
 <style>
-    body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; }
-    .font-hand { font-family: 'Gochi Hand', cursive; }
+    body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; color: #000; }
+    .font-hand { font-family: 'Gochi Hand', cursive; font-weight: 100; }
     
-    /* Textura de papel para secciones inferiores */
     .bg-paper { 
         background-color: #fdfcf9; 
         background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png'); 
     }
 
-    /* Estilo para los slides de la portada */
+    /* Slideshow ajustado: quitamos el filtro gris para que las fotos luzcan */
     .slide {
         position: absolute;
         inset: 0;
         background-size: cover;
         background-position: center;
-        filter: grayscale(100%) brightness(0.5); /* BN y oscurecido para que se lea el texto blanco */
         opacity: 0;
         transition: opacity 3s ease-in-out;
-        z-index: 0;}
+        z-index: 0;
+    }
     .slide.active { opacity: 1; }
-    /* El contenido (texto) debe estar por encima */
-.portada-contenido {
-    position: relative;
-    z-index: 10;}
-/* Esto evita que las imágenes "pesadas" rompan el layout en móviles */
-img {
-    max-width: 100%;
-    height: auto;}
 
-/* ELIMINAR LÍNEA VERTICAL DEFINITIVAMENTE */
-.flex.flex-col {
-    border: none !important;      /* Quita cualquier borde */
-    border-left: none !important; /* Específicamente el izquierdo */
-    padding-left: 0 !important;   /* Quita espacios que puedan simular una línea */
-    margin-left: 0 !important;
-}
-/* NÚMEROS MÁS GRANDES */
-#days, #hours, #minutes, #seconds {
-    font-size: 3.5rem !important; /* Tamaño grande para móvil */
-    font-weight: 300;
-    line-height: 1;
-    display: block;
-}
-/* Tamaño extra grande para computadoras */
-@media (min-width: 768px) {
-    #days, #hours, #minutes, #seconds {
-        font-size: 6rem !important;
+    .portada-contenido {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-col: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
     }
 
+    /* Eliminamos bordes y ajustamos contador */
+    .flex-col-no-border {
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #days, #hours, #minutes, #seconds {
+        font-size: 3.5rem !important;
+        font-weight: 100 !important; /* Más delgado */
+        line-height: 1;
+        color: #000;
+    }
+
+    @media (min-width: 768px) {
+        #days, #hours, #minutes, #seconds { font-size: 6rem !important; }
+    }
 </style>
 </head>
 <body class="bg-paper">
 
-
-    <div class="relative z-10 text-white">
-        <h2 class="uppercase tracking-[0.5em] text-xs mb-10 opacity-90">¡Nos Casamos!</h2>
-        
-        <h1 class="font-hand text-7xl md:text-9xl mb-12 drop-shadow-lg">
-            Pau & Mati
-        </h1>
-<div class="portada-contenido text-white">
-    <p class="uppercase tracking-[0.3em] text-[10px] mb-6 opacity-80">Y faltan</p>
-</div>
-
-        <div id="countdown" class="flex gap-6 md:gap-12 mb-16 justify-center">
-            <div class="flex flex-col"><span id="days" class="text-3xl font-light">00</span><span class="text-[9px] uppercase tracking-widest opacity-70">Días</span></div>
-            <div class="flex flex-col"><span id="hours" class="text-3xl font-light">00</span><span class="text-[9px] uppercase tracking-widest opacity-70">Hrs</span></div>
-            <div class="flex flex-col"><span id="minutes" class="text-3xl font-light">00</span><span class="text-[9px] uppercase tracking-widest opacity-70">Min</span></div>
-            <div class="flex flex-col"><span id="seconds" class="text-3xl font-light opacity-50">00</span><span class="text-[9px] uppercase tracking-widest opacity-70">Seg</span></div>
+    <section class="relative h-screen w-full overflow-hidden flex items-center justify-center text-center">
+        <div class="absolute inset-0 z-0 bg-white">
+            <div class="slide active" style="background-image: url('Boda1.jpg')"></div>
+            <div class="slide" style="background-image: url('Boda2.jpg')"></div>
         </div>
 
-        <div class="w-[1px] h-16 bg-white/30 mx-auto"></div>
-    </div>
-</section>
-<section class="py-24 px-6 text-center bg-paper border-b border-stone-200">
-    <div class="max-w-2xl mx-auto">
-        <p class="font-sans tracking-widest uppercase text-xs mb-2 opacity-70">Te esperamos el día</p>
-        <p class="font-serif text-2xl mb-2 text-stone-700">26 de Septiembre, 2026</p>
-
-<section class="py-24 bg-paper overflow-hidden">
-    <div class="max-w-5xl mx-auto px-4">
-        
-        <div class="relative">
+        <div class="portada-contenido px-6">
+            <h2 class="uppercase tracking-[0.6em] text-[10px] mb-8 text-black opacity-70">¡Nos Casamos!</h2>
             
-            <div class="hidden md:block absolute top-[110px] left-0 w-full h-[1.5px] bg-stone-800 z-0"></div>
+            <h1 class="font-hand text-7xl md:text-9xl mb-10 text-black">
+                Pau & Mati
+            </h1>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-y-16 md:gap-y-0 relative z-10">
-                
-               <div class="flex flex-col items-center">
-                    <img src="https://github.com/matiasoppermannv-pixel/web-pau-mati/blob/main/church.png?raw=true" alt="Ceremonia" class="w-20 h-20 mb-6 object-contain grayscale">
-                    <div class="hidden md:block w-[1.5px] h-4 bg-stone-800 mb-4"></div>
-                    <p class="font-hand text-3xl text-stone-800">Ceremonia</p>
-                    <p class="text-[11px] uppercase tracking-[0.2em] mt-2 text-stone-500 font-semibold">16:00 HS</p>
+            <p class="uppercase tracking-[0.4em] text-[10px] mb-8 text-black opacity-60">Y faltan</p>
+
+            <div id="countdown" class="flex gap-8 md:gap-16 mb-12">
+                <div class="flex-col-no-border"><span id="days">00</span><span class="text-[9px] uppercase tracking-widest opacity-60 mt-2">Días</span></div>
+                <div class="flex-col-no-border"><span id="hours">00</span><span class="text-[9px] uppercase tracking-widest opacity-60 mt-2">Hrs</span></div>
+                <div class="flex-col-no-border"><span id="minutes">00</span><span class="text-[9px] uppercase tracking-widest opacity-60 mt-2">Min</span></div>
+                <div class="flex-col-no-border"><span id="seconds">00</span><span class="text-[9px] uppercase tracking-widest opacity-60 mt-2">Seg</span></div>
+            </div>
+
+            <div class="w-[1px] h-12 bg-black/20 mx-auto"></div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 text-center bg-paper border-b border-stone-100">
+        <div class="max-w-2xl mx-auto">
+            <p class="tracking-[0.3em] uppercase text-[10px] mb-4 opacity-60">Te esperamos el día</p>
+            <p class="font-serif text-3xl mb-12 text-stone-800 italic">26 de Septiembre, 2026</p>
+            
+            <button onclick="toggleModal()" class="border border-stone-300 px-10 py-3 rounded-full uppercase text-[10px] tracking-[0.2em] hover:bg-stone-800 hover:text-white transition-all duration-500">
+                Ver Indicaciones
+            </button>
+        </div>
+    </section>
+
+    <section class="py-32 bg-paper">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-y-20 md:gap-y-0 relative">
+                <div class="hidden md:block absolute top-[40px] left-0 w-full h-[1px] bg-stone-200 z-0"></div>
+
+                <div class="flex flex-col items-center relative z-10">
+                    <div class="bg-paper p-4 mb-2">
+                         <img src="church.png" alt="Ceremonia" class="w-16 h-16 object-contain grayscale opacity-80">
+                    </div>
+                    <p class="font-hand text-4xl text-stone-800">Ceremonia</p>
+                    <p class="text-[10px] uppercase tracking-[0.2em] mt-3 text-stone-400">16:00 HS</p>
                 </div>
 
-                <div class="flex flex-col items-center">
-                    <img src="https://github.com/matiasoppermannv-pixel/web-pau-mati/blob/main/cocktail.png?raw=true" alt="Recepción" class="w-20 h-20 mb-6 object-contain">
-                    <div class="hidden md:block w-[1.5px] h-4 bg-stone-800 mb-4"></div>
-                    <p class="font-hand text-3xl text-stone-800">Recepción</p>
-                    <p class="text-[11px] uppercase tracking-[0.2em] mt-2 text-stone-500 font-semibold">17:30 HS</p>
+                <div class="flex flex-col items-center relative z-10">
+                    <div class="bg-paper p-4 mb-2">
+                        <img src="cocktail.png" alt="Recepción" class="w-16 h-16 object-contain grayscale opacity-80">
+                    </div>
+                    <p class="font-hand text-4xl text-stone-800">Recepción</p>
+                    <p class="text-[10px] uppercase tracking-[0.2em] mt-3 text-stone-400">17:30 HS</p>
                 </div>
 
-                <div class="flex flex-col items-center">
-                    <img src="https://github.com/matiasoppermannv-pixel/web-pau-mati/blob/main/eat.png?raw=true" alt="Cena" class="w-20 h-20 mb-6 object-contain">
-                    <div class="hidden md:block w-[1.5px] h-4 bg-stone-800 mb-4"></div>
-                    <p class="font-hand text-3xl text-stone-800">Cena</p>
-                    <p class="text-[11px] uppercase tracking-[0.2em] mt-2 text-stone-500 font-semibold">20:00 HS</p>
+                <div class="flex flex-col items-center relative z-10">
+                    <div class="bg-paper p-4 mb-2">
+                        <img src="eat.png" alt="Cena" class="w-16 h-16 object-contain grayscale opacity-80">
+                    </div>
+                    <p class="font-hand text-4xl text-stone-800">Cena</p>
+                    <p class="text-[10px] uppercase tracking-[0.2em] mt-3 text-stone-400">20:00 HS</p>
                 </div>
 
-                <div class="flex flex-col items-center">
-                    <img src="https://github.com/matiasoppermannv-pixel/web-pau-mati/blob/main/disco-ball.png?raw=true" alt="Baile" class="w-20 h-20 mb-6 object-contain">
-                    <div class="hidden md:block w-[1.5px] h-4 bg-stone-800 mb-4"></div>
-                    <p class="font-hand text-3xl text-stone-800">Baile</p>
-                    <p class="text-[11px] uppercase tracking-[0.2em] mt-2 text-stone-500 font-semibold">22:00 HS</p>
+                <div class="flex flex-col items-center relative z-10">
+                    <div class="bg-paper p-4 mb-2">
+                        <img src="disco-ball.png" alt="Baile" class="w-16 h-16 object-contain grayscale opacity-80">
+                    </div>
+                    <p class="font-hand text-4xl text-stone-800">Baile</p>
+                    <p class="text-[10px] uppercase tracking-[0.2em] mt-3 text-stone-400">22:00 HS</p>
                 </div>
-
             </div>
         </div>
-    </div>
-</section>   
+    </section>
 
-        <button onclick="toggleModal()" class="border border-stone-800 px-10 py-3 rounded-full uppercase text-[10px] tracking-[0.2em] hover:bg-stone-800 hover:text-white transition-all duration-500 shadow-sm active:scale-95">
-            Ver Indicaciones
-        </button>
-    </div>
-
-
-<div id="locationModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" style="background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px);">
-    <div class="bg-[#fdfcf9] p-8 rounded-lg shadow-2xl max-w-sm w-full text-center border border-stone-200">
-        <h3 class="font-serif italic text-2xl mb-8 text-stone-800">Ver indicaciones</h3>
+    <section class="py-32 text-center bg-paper">
+        <h2 class="font-serif text-3xl mb-10 italic">¡Queremos que nos acompañes!</h2>
         
-        <a href="https://maps.app.goo.gl/eRSWTDVYFs76wp5Q7" target="_blank" 
-           class="block w-full py-4 mb-4 border border-stone-300 rounded-md hover:bg-stone-800 hover:text-white transition-all duration-300 tracking-widest text-[10px] uppercase text-stone-700 font-semibold">
-             Ceremonia
-        </a>
-
-        <a href="https://maps.app.goo.gl/YPo5tM56oGiDsHSN6" target="_blank" 
-           class="block w-full py-4 mb-8 border border-stone-300 rounded-md hover:bg-stone-800 hover:text-white transition-all duration-300 tracking-widest text-[10px] uppercase text-stone-700 font-semibold">
-            Recepción
-        </a>
-
-        <button onclick="toggleModal()" class="text-[9px] uppercase tracking-[0.3em] underline opacity-50 hover:opacity-100 transition-opacity">
-            Cerrar
-        </button>
-    </div>
-</div>
-    
- <div class="mt-4">
-<a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Pau+%26+Mati&dates=20260926T190000Z/20260927T053000Z&details=¡Estamos+felices+de+compartir+nuestra+boda+con+ustedes!&location=Estancia+La+Paz,+Ascochinga,+Córdoba,+Argentina" 
-   target="_blank" 
-   class="inline-block text-[10px] tracking-[0.3em] uppercase underline decoration-stone-300 underline-offset-8 hover:text-stone-400 transition-colors">
-   + Agregar al calendario
-</a>
-</section>
-    <section class="py-24 text-center bg-paper">
-        <h2 class="serif text-3xl mb-4 italic">¡Queremos que nos acompañes!</h2>
-        
-        <button 
-            data-tally-open="0QEdJB" 
-            data-tally-layout="modal" 
-            data-tally-width="500" 
-            data-tally-emoji-animation="wave"
-            class="inline-block bg-stone-800 text-white px-12 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-stone-700 transition shadow-xl active:scale-95">
+        <button data-tally-open="0QEdJB" data-tally-layout="modal" data-tally-width="500" 
+            class="bg-stone-800 text-white px-12 py-4 rounded-full tracking-widest uppercase text-[11px] hover:bg-stone-700 transition shadow-lg mb-8">
             Confirma tu asistencia
         </button>
 
+        <p class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Por favor, confirma antes del 15 de agosto</p>
         
-        <p class="text-[10px] tracking-[0.2em] uppercase mb-12 text-stone-500">Por favor, te pedimos nos confirmes antes del 15 de agosto</p>
+        <div class="mt-16">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Pau+%26+Mati..." target="_blank" 
+               class="text-[9px] tracking-[0.3em] uppercase underline decoration-stone-200 underline-offset-8 opacity-60 hover:opacity-100 transition-opacity">
+                + Agregar al calendario
+            </a>
+        </div>
     </section>
 
-    <footer class="py-24 text-center">
-        <p class="serif italic text-2xl opacity-80">¡Te esperamos!</p>
-        <p class="mt-10 text-[9px] tracking-[0.3em] uppercase opacity-40">P & M • 2025</p>
+    <div id="locationModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
+        <div class="bg-[#fdfcf9] p-10 rounded-lg shadow-2xl max-w-sm w-full text-center border border-stone-100">
+            <h3 class="font-serif italic text-2xl mb-8">Ubicaciones</h3>
+            <a href="#" target="_blank" class="block w-full py-4 mb-4 border border-stone-200 rounded-md text-[10px] uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all">Ceremonia</a>
+            <a href="#" target="_blank" class="block w-full py-4 mb-8 border border-stone-200 rounded-md text-[10px] uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all">Recepción</a>
+            <button onclick="toggleModal()" class="text-[9px] uppercase tracking-[0.3em] underline opacity-40">Cerrar</button>
+        </div>
+    </div>
+
+    <footer class="py-24 text-center border-t border-stone-100">
+        <p class="font-serif italic text-2xl opacity-60">¡Te esperamos!</p>
+        <p class="mt-10 text-[9px] tracking-[0.4em] uppercase opacity-30">P & M • 2026</p>
     </footer>
-<script>
-    function toggleModal() {
-        const modal = document.getElementById('locationModal');
-        // Esto alterna entre mostrar y ocultar el pop-up
-        modal.classList.toggle('hidden');
-    }
-</script>
-    
-<script>
-    // Configura tu fecha aquí (Año, Mes-1, Día, Hora, Minuto)
-    // Nota: El mes 9 es Octubre porque empieza en 0
-    const weddingDate = new Date(2026, 8, 26, 16, 0, 0).getTime();
 
-    const timer = setInterval(function() {
-        const now = new Date().getTime();
-        const diff = weddingDate - now;
+    <script>
+        function toggleModal() { document.getElementById('locationModal').classList.toggle('hidden'); }
 
-        if (diff <= 0) {
-            clearInterval(timer);
-            document.getElementById("countdown").innerHTML = "¡Llegó el día!";
-            return;
-        }
+        const weddingDate = new Date(2026, 8, 26, 16, 0, 0).getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+            if (diff <= 0) return;
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }, 1000);
 
-        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById("days").innerText = d < 10 ? "0"+d : d;
-        document.getElementById("hours").innerText = h < 10 ? "0"+h : h;
-        document.getElementById("minutes").innerText = m < 10 ? "0"+m : m;
-        document.getElementById("seconds").innerText = s < 10 ? "0"+s : s;
-    }, 1000);
-</script>
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function nextSlide() {
-        // Quita la clase activa de la foto actual
-        slides[currentSlide].classList.remove('active');
-        
-        // Pasa a la siguiente (y vuelve a empezar si es la última)
-        currentSlide = (currentSlide + 1) % slides.length;
-        
-        // Añade la clase activa a la nueva foto
-        slides[currentSlide].classList.add('active');
-    }
-
-    // Cambia la foto cada 5 segundos (5000 milisegundos)
-    setInterval(nextSlide, 5000);
-</script>
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }
-
-    setInterval(nextSlide, 3000);
-</script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+    </script>
 </body>
 </html>
