@@ -9,101 +9,86 @@
     <script src="https://tally.so/widgets/embed.js"></script>
 <style>
     body { font-family: 'Montserrat', sans-serif; background-color: #fdfcf9; color: #000; }
-    .font-hand { font-family: 'Gochi Hand', cursive; font-weight: 100; }
+    .font-hand { font-family: 'Gochi Hand', cursive; }
     
     .bg-paper { 
         background-color: #fdfcf9; 
         background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png'); 
     }
 
-    /* Slideshow ajustado: quitamos el filtro gris para que las fotos luzcan */
+    /* Slideshow: ahora con un overlay oscuro suave para lectura */
     .slide {
         position: absolute;
         inset: 0;
         background-size: cover;
         background-position: center;
         opacity: 0;
-        transition: opacity 3s ease-in-out;
+        transition: opacity 2s ease-in-out;
         z-index: 0;
+    }
+    .slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.2); /* Oscurece un poco la foto para que el texto resalte */
     }
     .slide.active { opacity: 1; }
 
     .portada-contenido {
         position: relative;
         z-index: 10;
-        display: flex;
-        flex-col: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-    }
-
-    /* Eliminamos bordes y ajustamos contador */
-    .flex-col-no-border {
-        border: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     #days, #hours, #minutes, #seconds {
-        font-size: 3.5rem !important;
-        font-weight: 100 !important; /* Más delgado */
+        font-weight: 100 !important;
         line-height: 1;
-        color: #000;
-    }
-
-    @media (min-width: 768px) {
-        #days, #hours, #minutes, #seconds { font-size: 6rem !important; }
     }
 </style>
 </head>
 <body class="bg-paper">
 
-<section class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center text-center px-4">
+    <section class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center text-center px-4">
         
-        <div class="absolute inset-0 z-0 bg-white">
+        <div class="absolute inset-0 z-0 bg-black">
             <div class="slide active" style="background-image: url('Boda1.jpg')"></div>
             <div class="slide" style="background-image: url('Boda2.jpg')"></div>
             <div class="slide" style="background-image: url('Boda3.jpg')"></div>
         </div>
 
-        <div class="portada-contenido flex flex-col items-center w-full">
+        <div class="portada-contenido flex flex-col items-center w-full text-white">
             
-            <h2 class="uppercase tracking-[0.7em] text-[9px] mb-8 text-black opacity-60 font-light">
+            <h2 class="uppercase tracking-[0.7em] text-[9px] mb-8 opacity-80 font-light">
                 ¡Nos Casamos!
             </h2>
             
-            <h1 class="font-hand text-8xl md:text-[12rem] mb-12 text-black leading-tight drop-shadow-sm">
+            <h1 class="font-hand text-7xl md:text-[11rem] mb-12 leading-tight drop-shadow-xl whitespace-nowrap">
                 Pau & Mati
             </h1>
 
-            <p class="uppercase tracking-[0.5em] text-[8px] mb-8 text-black opacity-40 font-light">
+            <p class="uppercase tracking-[0.5em] text-[8px] mb-8 opacity-70 font-light">
                 Y faltan solo
             </p>
 
             <div id="countdown" class="flex gap-4 md:gap-10 mb-14">
                 <div class="flex flex-col items-center">
-                    <span id="days" class="text-black font-[100] text-3xl md:text-5xl">00</span>
-                    <span class="text-[7px] md:text-[8px] uppercase tracking-widest opacity-40 mt-1">Días</span>
+                    <span id="days" class="font-[100] text-4xl md:text-6xl">00</span>
+                    <span class="text-[7px] md:text-[8px] uppercase tracking-widest opacity-60 mt-1">Días</span>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span id="hours" class="text-black font-[100] text-3xl md:text-5xl">00</span>
-                    <span class="text-[7px] md:text-[8px] uppercase tracking-widest opacity-40 mt-1">Hrs</span>
+                    <span id="hours" class="font-[100] text-4xl md:text-6xl">00</span>
+                    <span class="text-[7px] md:text-[8px] uppercase tracking-widest opacity-60 mt-1">Hrs</span>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span id="minutes" class="text-black font-[100] text-3xl md:text-5xl">00</span>
-                    <span class="text-[7px] md:text-[8px] uppercase tracking-widest opacity-40 mt-1">Min</span>
+                    <span id="minutes" class="font-[100] text-4xl md:text-6xl">00</span>
+                    <span class="text-[7px] md:text-[8px] uppercase tracking-widest opacity-60 mt-1">Min</span>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span id="seconds" class="text-black font-[100] text-3xl md:text-5xl">00</span>
-                    <span class="text-[7px] md:text-[8px] uppercase tracking-widest opacity-40 mt-1">Seg</span>
+                    <span id="seconds" class="font-[100] text-4xl md:text-6xl opacity-50">00</span>
+                    <span class="text-[7px] md:text-[8px] uppercase tracking-widest opacity-60 mt-1">Seg</span>
                 </div>
             </div>
 
-            <div class="w-[1px] h-12 bg-black/10"></div>
+            <div class="w-[1px] h-12 bg-white/30"></div>
         </div>
     </section>
 
@@ -111,8 +96,7 @@
         <div class="max-w-2xl mx-auto">
             <p class="tracking-[0.3em] uppercase text-[10px] mb-4 opacity-60">Te esperamos el día</p>
             <p class="font-serif text-3xl mb-12 text-stone-800 italic">26 de Septiembre, 2026</p>
-            
-            <button onclick="toggleModal()" class="border border-stone-300 px-10 py-3 rounded-full uppercase text-[10px] tracking-[0.2em] hover:bg-stone-800 hover:text-white transition-all duration-500">
+            <button onclick="toggleModal()" class="border border-stone-300 px-10 py-3 rounded-full uppercase text-[10px] tracking-[0.2em] hover:bg-stone-800 hover:text-white transition-all">
                 Ver Indicaciones
             </button>
         </div>
@@ -122,35 +106,23 @@
         <div class="max-w-5xl mx-auto px-4 text-center">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-y-20 md:gap-y-0 relative">
                 <div class="hidden md:block absolute top-[40px] left-0 w-full h-[1px] bg-stone-200 z-0"></div>
-
                 <div class="flex flex-col items-center relative z-10">
-                    <div class="bg-paper p-4 mb-2">
-                         <img src="church.png" alt="Ceremonia" class="w-16 h-16 object-contain grayscale opacity-80">
-                    </div>
+                    <img src="church.png" alt="Ceremonia" class="w-16 h-16 mb-4 grayscale opacity-80">
                     <p class="font-hand text-4xl text-stone-800">Ceremonia</p>
                     <p class="text-[10px] uppercase tracking-[0.2em] mt-3 text-stone-400">16:00 HS</p>
                 </div>
-
                 <div class="flex flex-col items-center relative z-10">
-                    <div class="bg-paper p-4 mb-2">
-                        <img src="cocktail.png" alt="Recepción" class="w-16 h-16 object-contain grayscale opacity-80">
-                    </div>
+                    <img src="cocktail.png" alt="Recepción" class="w-16 h-16 mb-4 grayscale opacity-80">
                     <p class="font-hand text-4xl text-stone-800">Recepción</p>
                     <p class="text-[10px] uppercase tracking-[0.2em] mt-3 text-stone-400">17:30 HS</p>
                 </div>
-
                 <div class="flex flex-col items-center relative z-10">
-                    <div class="bg-paper p-4 mb-2">
-                        <img src="eat.png" alt="Cena" class="w-16 h-16 object-contain grayscale opacity-80">
-                    </div>
+                    <img src="eat.png" alt="Cena" class="w-16 h-16 mb-4 grayscale opacity-80">
                     <p class="font-hand text-4xl text-stone-800">Cena</p>
                     <p class="text-[10px] uppercase tracking-[0.2em] mt-3 text-stone-400">20:00 HS</p>
                 </div>
-
                 <div class="flex flex-col items-center relative z-10">
-                    <div class="bg-paper p-4 mb-2">
-                        <img src="disco-ball.png" alt="Baile" class="w-16 h-16 object-contain grayscale opacity-80">
-                    </div>
+                    <img src="disco-ball.png" alt="Baile" class="w-16 h-16 mb-4 grayscale opacity-80">
                     <p class="font-hand text-4xl text-stone-800">Baile</p>
                     <p class="text-[10px] uppercase tracking-[0.2em] mt-3 text-stone-400">22:00 HS</p>
                 </div>
@@ -158,34 +130,17 @@
         </div>
     </section>
 
-    <section class="py-32 text-center bg-paper">
-        <h2 class="font-serif text-3xl mb-10 italic">¡Queremos que nos acompañes!</h2>
-        
-        <button data-tally-open="0QEdJB" data-tally-layout="modal" data-tally-width="500" 
-            class="bg-stone-800 text-white px-12 py-4 rounded-full tracking-widest uppercase text-[11px] hover:bg-stone-700 transition shadow-lg mb-8">
-            Confirma tu asistencia
-        </button>
-
-        <p class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Por favor, confirma antes del 15 de agosto</p>
-        
-        <div class="mt-16">
-            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Pau+%26+Mati..." target="_blank" 
-               class="text-[9px] tracking-[0.3em] uppercase underline decoration-stone-200 underline-offset-8 opacity-60 hover:opacity-100 transition-opacity">
-                + Agregar al calendario
-            </a>
-        </div>
-    </section>
-
     <div id="locationModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
-        <div class="bg-[#fdfcf9] p-10 rounded-lg shadow-2xl max-w-sm w-full text-center border border-stone-100">
+        <div class="bg-[#fdfcf9] p-10 rounded-lg shadow-2xl max-w-sm w-full text-center">
             <h3 class="font-serif italic text-2xl mb-8">Ubicaciones</h3>
-            <a href="#" target="_blank" class="block w-full py-4 mb-4 border border-stone-200 rounded-md text-[10px] uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all">Ceremonia</a>
-            <a href="#" target="_blank" class="block w-full py-4 mb-8 border border-stone-200 rounded-md text-[10px] uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all">Recepción</a>
+            <a href="TU_LINK_MAPS_1" target="_blank" class="block w-full py-4 mb-4 border border-stone-200 rounded-md text-[10px] uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all">Ceremonia</a>
+            <a href="TU_LINK_MAPS_2" target="_blank" class="block w-full py-4 mb-8 border border-stone-200 rounded-md text-[10px] uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all">Recepción</a>
             <button onclick="toggleModal()" class="text-[9px] uppercase tracking-[0.3em] underline opacity-40">Cerrar</button>
         </div>
     </div>
 
     <footer class="py-24 text-center border-t border-stone-100">
+        <button data-tally-open="0QEdJB" class="bg-stone-800 text-white px-12 py-4 rounded-full tracking-widest uppercase text-[11px] mb-12">Confirma tu asistencia</button>
         <p class="font-serif italic text-2xl opacity-60">¡Te esperamos!</p>
         <p class="mt-10 text-[9px] tracking-[0.4em] uppercase opacity-30">P & M • 2026</p>
     </footer>
@@ -193,6 +148,7 @@
     <script>
         function toggleModal() { document.getElementById('locationModal').classList.toggle('hidden'); }
 
+        // Contador
         const weddingDate = new Date(2026, 8, 26, 16, 0, 0).getTime();
         setInterval(function() {
             const now = new Date().getTime();
@@ -204,13 +160,15 @@
             document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
         }, 1000);
 
+        // Slideshow Infinito
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
-        setInterval(() => {
+        function cycleSlides() {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }, 5000);
+        }
+        setInterval(cycleSlides, 5000);
     </script>
 </body>
 </html>
