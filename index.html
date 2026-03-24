@@ -21,7 +21,7 @@
     .font-hand { font-family: 'Gochi Hand', cursive; }
     h1, h2, h3, p, span { color: #000 !important; }
 
-    /* 2. EFECTO FOTO FULL WIDTH CON DESVANECIDO (MASK) */
+    /* 2. EFECTO FOTO FULL WIDTH CON DESVANECIDO */
     .contenedor-foto-full {
         width: 100vw;
         position: relative;
@@ -35,12 +35,11 @@
         width: 100%;
         height: auto;
         display: block;
-        /* Crea el efecto de fundido arriba y abajo */
         -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
         mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
     }
 
-    /* 3. ESTILOS CRONOGRAMA */
+    /* 3. ESTILOS CRONOGRAMA SIN LÍNEA */
     .custom-scrollbar::-webkit-scrollbar { height: 3px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
@@ -97,36 +96,26 @@
             <h3 class="uppercase tracking-[0.3em] text-[10px] mb-20 opacity-40">Itinerario</h3>
             
             <div class="overflow-x-auto pb-12 custom-scrollbar">
-                <div class="min-w-[850px] relative px-10 pt-10">
-                    
-                    <div class="absolute top-[108px] left-0 w-full h-[1px] bg-black/30">
-                        <div class="absolute w-full flex justify-between px-[60px]">
-                            <div class="w-[1.5px] h-4 bg-black/40 -mt-1.5"></div>
-                            <div class="w-[1.5px] h-4 bg-black/40 -mt-1.5"></div>
-                            <div class="w-[1.5px] h-4 bg-black/40 -mt-1.5"></div>
-                            <div class="w-[1.5px] h-4 bg-black/40 -mt-1.5"></div>
-                        </div>
-                    </div>
-
+                <div class="min-w-[850px] relative px-10">
                     <div class="flex justify-between items-start relative z-10">
                         <div class="flex flex-col items-center w-48">
-                            <span class="text-[10px] tracking-widest mb-10 opacity-50 font-bold">16:00 HS</span>
-                            <div class="mb-4"><img src="church.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
+                            <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">16:00 HS</span>
+                            <div class="mb-6"><img src="church.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
                             <p class="font-hand text-3xl">Ceremonia</p>
                         </div>
                         <div class="flex flex-col items-center w-48">
-                            <span class="text-[10px] tracking-widest mb-10 opacity-50 font-bold">17:30 HS</span>
-                            <div class="mb-4"><img src="cocktail.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
+                            <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">17:30 HS</span>
+                            <div class="mb-6"><img src="cocktail.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
                             <p class="font-hand text-3xl">Recepción</p>
                         </div>
                         <div class="flex flex-col items-center w-48">
-                            <span class="text-[10px] tracking-widest mb-10 opacity-50 font-bold">20:00 HS</span>
-                            <div class="mb-4"><img src="eat.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
+                            <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">20:00 HS</span>
+                            <div class="mb-6"><img src="eat.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
                             <p class="font-hand text-3xl">Cena</p>
                         </div>
                         <div class="flex flex-col items-center w-48">
-                            <span class="text-[10px] tracking-widest mb-10 opacity-50 font-bold">22:00 HS</span>
-                            <div class="mb-4"><img src="disco-ball.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
+                            <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">22:00 HS</span>
+                            <div class="mb-6"><img src="disco-ball.png" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
                             <p class="font-hand text-3xl">Baile</p>
                         </div>
                     </div>
