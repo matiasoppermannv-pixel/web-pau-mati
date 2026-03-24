@@ -62,29 +62,48 @@
 </head>
 <body class="bg-paper">
 
-    <section class="relative h-screen w-full overflow-hidden flex items-center justify-center text-center">
+   <section class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center text-center px-6">
+        
         <div class="absolute inset-0 z-0 bg-white">
             <div class="slide active" style="background-image: url('Boda1.jpg')"></div>
             <div class="slide" style="background-image: url('Boda2.jpg')"></div>
+            <div class="slide" style="background-image: url('Boda3.jpg')"></div>
         </div>
 
-        <div class="portada-contenido px-6">
-            <h2 class="uppercase tracking-[0.6em] text-[10px] mb-8 text-black opacity-70">¡Nos Casamos!</h2>
+        <div class="portada-contenido flex flex-col items-center">
+            
+            <h2 class="uppercase tracking-[0.6em] text-[10px] mb-6 text-black opacity-80 font-light">
+                ¡Nos Casamos!
+            </h2>
             
             <h1 class="font-hand text-7xl md:text-9xl mb-10 text-black">
                 Pau & Mati
             </h1>
 
-            <p class="uppercase tracking-[0.4em] text-[10px] mb-8 text-black opacity-60">Y faltan</p>
+            <p class="uppercase tracking-[0.4em] text-[10px] mb-10 text-black opacity-60 font-light">
+                Y faltan solo
+            </p>
 
-            <div id="countdown" class="flex gap-8 md:gap-16 mb-12">
-                <div class="flex-col-no-border"><span id="days">00</span><span class="text-[9px] uppercase tracking-widest opacity-60 mt-2">Días</span></div>
-                <div class="flex-col-no-border"><span id="hours">00</span><span class="text-[9px] uppercase tracking-widest opacity-60 mt-2">Hrs</span></div>
-                <div class="flex-col-no-border"><span id="minutes">00</span><span class="text-[9px] uppercase tracking-widest opacity-60 mt-2">Min</span></div>
-                <div class="flex-col-no-border"><span id="seconds">00</span><span class="text-[9px] uppercase tracking-widest opacity-60 mt-2">Seg</span></div>
+            <div id="countdown" class="flex gap-6 md:gap-14 mb-12">
+                <div class="flex flex-col items-center">
+                    <span id="days" class="text-black font-[100]">00</span>
+                    <span class="text-[9px] uppercase tracking-widest opacity-50 mt-2">Días</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="hours" class="text-black font-[100]">00</span>
+                    <span class="text-[9px] uppercase tracking-widest opacity-50 mt-2">Hrs</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="minutes" class="text-black font-[100]">00</span>
+                    <span class="text-[9px] uppercase tracking-widest opacity-50 mt-2">Min</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="seconds" class="text-black font-[100]">00</span>
+                    <span class="text-[9px] uppercase tracking-widest opacity-50 mt-2">Seg</span>
+                </div>
             </div>
 
-            <div class="w-[1px] h-12 bg-black/20 mx-auto"></div>
+            <div class="w-[1px] h-14 bg-black/10"></div>
         </div>
     </section>
 
