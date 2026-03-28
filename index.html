@@ -22,20 +22,19 @@
     .font-hand { font-family: 'Gochi Hand', cursive; }
     h1, h2, h3, p, span { color: #000 !important; }
 
-    /* EFECTO FOTO FULL WIDTH CON DESVANECIDO */
-    .contenedor-foto-full {
-        width: 100vw;
+    /* CONTENEDOR DE FOTOS REDUCIDO Y CENTRADO */
+    .contenedor-foto-centrada {
+        width: 90%;
+        max-width: 800px; /* Tamaño máximo controlado */
+        margin: 0 auto;
         position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
     }
 
     .foto-difuminada {
         width: 100%;
         height: auto;
         display: block;
+        /* Efecto de desvanecido en bordes superior e inferior */
         -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
         mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
     }
@@ -64,7 +63,7 @@
         <div class="w-[1px] h-16 bg-black/10"></div>
     </section>
 
-    <div class="contenedor-foto-full">
+    <div class="contenedor-foto-centrada">
         <img src="Boda1.jpeg" alt="Pau y Mati" class="foto-difuminada">
     </div>
 
@@ -78,7 +77,7 @@
         </div>
     </section>
 
-    <div class="contenedor-foto-full">
+    <div class="contenedor-foto-centrada">
         <img src="Boda3.jpg" alt="Detalles" class="foto-difuminada">
     </div>
 
@@ -126,7 +125,7 @@
         </div>
     </section>
 
-    <div class="contenedor-foto-full pb-20">
+    <div class="contenedor-foto-centrada pb-20">
         <img src="Boda6.jpg" alt="Final" class="foto-difuminada">
     </div>
 
@@ -147,7 +146,6 @@
     <script>
         function toggleModal() { document.getElementById('locationModal').classList.toggle('hidden'); }
         
-        // Configuración de la cuenta regresiva
         const weddingDate = new Date(2026, 8, 26, 16, 0, 0).getTime();
         setInterval(function() {
             const now = new Date().getTime();
