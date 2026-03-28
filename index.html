@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://tally.so/widgets/embed.js"></script>
 <style>
-    /* CONFIGURACIÓN GLOBAL */
     body { 
         font-family: 'Montserrat', sans-serif; 
         font-weight: 100;
@@ -22,10 +21,10 @@
     .font-hand { font-family: 'Gochi Hand', cursive; }
     h1, h2, h3, p, span { color: #000 !important; }
 
-    /* CONTENEDOR DE FOTOS REDUCIDO Y CENTRADO */
-    .contenedor-foto-centrada {
-        width: 90%;
-        max-width: 800px; /* Tamaño máximo controlado */
+    /* CONTENEDOR RESPONSIVO PARA FOTOS */
+    .contenedor-foto {
+        width: 90%; 
+        max-width: 550px; 
         margin: 0 auto;
         position: relative;
     }
@@ -34,12 +33,12 @@
         width: 100%;
         height: auto;
         display: block;
-        /* Efecto de desvanecido en bordes superior e inferior */
-        -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-        mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        border-radius: 12px;
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
     }
 
-    /* ESTILOS CRONOGRAMA */
+    /* SCROLLBAR PARA EL CRONOGRAMA EN MÓVIL */
     .custom-scrollbar::-webkit-scrollbar { height: 3px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
@@ -49,10 +48,10 @@
 </head>
 <body>
 
-    <section class="h-screen w-full flex flex-col items-center justify-center text-center px-6 relative z-10">
-        <h2 class="uppercase tracking-[0.8em] text-[14px] mb-8 opacity-90 font-normal">¡Nos Casamos!</h2>
-        <h1 class="font-hand text-6xl md:text-[11rem] mb-12 leading-tight">Pau & Mati</h1>
-        <p class="uppercase tracking-[0.6em] text-[12px] mb-8 opacity-80 font-normal">Y faltan solo</p>
+    <section class="min-h-screen w-full flex flex-col items-center justify-center text-center px-6 py-20 relative z-10">
+        <h2 class="uppercase tracking-[0.8em] text-[12px] md:text-[14px] mb-8 opacity-90 font-normal">¡Nos Casamos!</h2>
+        <h1 class="font-hand text-6xl md:text-9xl lg:text-[11rem] mb-12 leading-tight">Pau & Mati</h1>
+        <p class="uppercase tracking-[0.6em] text-[10px] md:text-[12px] mb-8 opacity-80 font-normal">Y faltan solo</p>
         
         <div id="countdown" class="flex gap-4 md:gap-14 mb-16">
             <div class="flex flex-col items-center"><span id="days" class="text-3xl md:text-6xl">00</span><span class="text-[8px] uppercase tracking-widest opacity-40 mt-2">Días</span></div>
@@ -63,27 +62,27 @@
         <div class="w-[1px] h-16 bg-black/10"></div>
     </section>
 
-    <div class="contenedor-foto-centrada">
+    <div class="contenedor-foto">
         <img src="Boda1.jpeg" alt="Pau y Mati" class="foto-difuminada">
     </div>
 
-    <section class="py-24 px-6 text-center">
+    <section class="py-20 md:py-32 px-6 text-center">
         <div class="max-w-2xl mx-auto">
             <p class="tracking-[0.3em] uppercase text-[10px] mb-4 opacity-50 font-semibold">Te esperamos el día</p>
-            <p class="font-serif text-4xl mb-12 italic">26 de Septiembre, 2026</p>
-            <button onclick="toggleModal()" class="border border-black px-12 py-3 rounded-full uppercase text-[10px] tracking-[0.2em] hover:bg-black hover:text-white transition-all duration-500">
+            <p class="font-serif text-3xl md:text-5xl mb-12 italic">26 de Septiembre, 2026</p>
+            <button onclick="toggleModal()" class="border border-black px-10 py-3 rounded-full uppercase text-[10px] tracking-[0.2em] hover:bg-black hover:text-white transition-all duration-500">
                 Ver Indicaciones
             </button>
         </div>
     </section>
 
-    <div class="contenedor-foto-centrada">
+    <div class="contenedor-foto">
         <img src="Boda3.jpg" alt="Detalles" class="foto-difuminada">
     </div>
 
-    <section class="py-24 text-center">
-        <div class="max-w-2xl mx-auto px-6">
-            <h2 class="font-hand text-5xl md:text-6xl mb-10 text-black">¡Queremos que nos acompañes!</h2>
+    <section class="py-20 md:py-32 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="font-hand text-5xl md:text-7xl mb-10 text-black">¡Queremos que nos acompañes!</h2>
             <button data-tally-open="0QEdJB" class="bg-black text-white px-12 py-4 rounded-full tracking-widest uppercase text-[11px] hover:bg-zinc-800 transition shadow-xl mb-8 active:scale-95">
                 Confirma tu asistencia
             </button>
@@ -91,61 +90,81 @@
         </div>
     </section>
 
-    <section class="py-24 bg-paper overflow-hidden border-t border-black/5">
+    <section class="py-20 md:py-32 bg-transparent overflow-hidden border-t border-black/5">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <h3 class="font-hand text-7xl md:text-8xl mb-20 text-black">Cronograma</h3>
+            <h3 class="font-hand text-6xl md:text-8xl mb-20 text-black">Cronograma</h3>
             
             <div class="overflow-x-auto pb-12 custom-scrollbar">
-                <div class="min-w-[850px] relative px-10">
-                    <div class="flex justify-between items-start relative z-10">
-                        <div class="flex flex-col items-center w-48">
+                <div class="min-w-[800px] md:min-w-full relative px-10">
+                    <div class="flex justify-between md:justify-around items-start">
+                        <div class="flex flex-col items-center w-40">
                             <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">16:00 HS</span>
-                            <div class="mb-6"><img src="church.png" alt="Ceremonia" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
-                            <p class="font-hand text-3xl">Ceremonia</p>
+                            <div class="mb-6"><img src="church.png" alt="Ceremonia" class="w-12 h-12 md:w-16 md:h-16 grayscale opacity-80 object-contain"></div>
+                            <p class="font-hand text-2xl md:text-3xl">Ceremonia</p>
                         </div>
-                        <div class="flex flex-col items-center w-48">
+                        <div class="flex flex-col items-center w-40">
                             <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">17:30 HS</span>
-                            <div class="mb-6"><img src="cocktail.png" alt="Recepción" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
-                            <p class="font-hand text-3xl">Recepción</p>
+                            <div class="mb-6"><img src="cocktail.png" alt="Recepción" class="w-12 h-12 md:w-16 md:h-16 grayscale opacity-80 object-contain"></div>
+                            <p class="font-hand text-2xl md:text-3xl">Recepción</p>
                         </div>
-                        <div class="flex flex-col items-center w-48">
+                        <div class="flex flex-col items-center w-40">
                             <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">20:00 HS</span>
-                            <div class="mb-6"><img src="eat.png" alt="Cena" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
-                            <p class="font-hand text-3xl">Cena</p>
+                            <div class="mb-6"><img src="eat.png" alt="Cena" class="w-12 h-12 md:w-16 md:h-16 grayscale opacity-80 object-contain"></div>
+                            <p class="font-hand text-2xl md:text-3xl">Cena</p>
                         </div>
-                        <div class="flex flex-col items-center w-48">
+                        <div class="flex flex-col items-center w-40">
                             <span class="text-[10px] tracking-widest mb-6 opacity-50 font-bold">22:00 HS</span>
-                            <div class="mb-6"><img src="disco-ball.png" alt="Baile" class="w-14 h-14 grayscale opacity-80 object-contain"></div>
-                            <p class="font-hand text-3xl">Baile</p>
+                            <div class="mb-6"><img src="disco-ball.png" alt="Baile" class="w-12 h-12 md:w-16 md:h-16 grayscale opacity-80 object-contain"></div>
+                            <p class="font-hand text-2xl md:text-3xl">Baile</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <p class="md:hidden text-[8px] uppercase tracking-[0.3em] opacity-30 mt-4">← Desliza para ver más →</p>
+            <p class="md:hidden text-[8px] uppercase tracking-[0.3em] opacity-30 mt-4">← Desliza →</p>
         </div>
     </section>
 
-    <div class="contenedor-foto-centrada pb-20">
+    <section class="py-20 md:py-32 text-center border-t border-black/5">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="mb-8 flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+            </div>
+            <h2 class="font-hand text-5xl md:text-6xl mb-6">Regalos</h2>
+            <p class="text-[11px] md:text-[13px] tracking-widest uppercase opacity-60 mb-10 leading-relaxed">
+                Tu presencia es nuestro mejor regalo, pero si deseas ayudarnos con nuestra luna de miel:
+            </p>
+            <div class="bg-black/5 p-8 rounded-2xl inline-block w-full max-w-md">
+                <p class="text-[10px] uppercase tracking-[0.3em] mb-2 opacity-40">Alias</p>
+                <p class="text-lg md:text-xl font-medium mb-6 tracking-wider">PAU.Y.MATI.BODA</p>
+                
+                <p class="text-[10px] uppercase tracking-[0.3em] mb-2 opacity-40">CBU</p>
+                <p class="text-sm md:text-base font-medium tracking-tighter break-all">0000003100012345678901</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="contenedor-foto pb-20">
         <img src="Boda6.jpg" alt="Final" class="foto-difuminada">
     </div>
 
-    <div id="locationModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm">
-        <div class="bg-[#fdfcf9] p-10 rounded-lg shadow-2xl max-w-sm w-full text-center border border-black/5">
+    <div id="locationModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
+        <div class="bg-[#fdfcf9] p-8 md:p-12 rounded-lg shadow-2xl max-w-sm w-full text-center border border-black/5">
             <h3 class="font-serif italic text-2xl mb-8">Ubicaciones</h3>
-            <a href="https://maps.app.goo.gl/SbxFBJaPCrxj3co89" target="_blank" class="block w-full py-4 mb-4 border border-black/10 rounded-md text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Ceremonia</a>
-            <a href="https://maps.app.goo.gl/VJkT5GLr2dwEQ8YaA" target="_blank" class="block w-full py-4 mb-8 border border-black/10 rounded-md text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Recepción</a>
+            <a href="TU_LINK_MAPS_CEREMONIA" target="_blank" class="block w-full py-4 mb-4 border border-black/10 rounded-md text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Ceremonia</a>
+            <a href="TU_LINK_MAPS_RECEPCION" target="_blank" class="block w-full py-4 mb-8 border border-black/10 rounded-md text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Recepción</a>
             <button onclick="toggleModal()" class="text-[9px] uppercase tracking-[0.3em] underline opacity-40 hover:opacity-100 transition-opacity">Cerrar</button>
         </div>
     </div>
 
-    <footer class="py-24 text-center border-t border-black/5">
+    <footer class="py-20 text-center border-t border-black/5">
         <p class="font-serif italic text-2xl opacity-40">¡Te esperamos!</p>
         <p class="mt-10 text-[9px] tracking-[0.4em] uppercase opacity-20">P & M • 2026</p>
     </footer>
 
     <script>
         function toggleModal() { document.getElementById('locationModal').classList.toggle('hidden'); }
-        
         const weddingDate = new Date(2026, 8, 26, 16, 0, 0).getTime();
         setInterval(function() {
             const now = new Date().getTime();
